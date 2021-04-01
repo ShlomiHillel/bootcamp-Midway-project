@@ -1,0 +1,2 @@
+(this["webpackJsonpbootcamp-Midway-project"]=this["webpackJsonpbootcamp-Midway-project"]||[]).push([[0],{11:function(t,e,c){"use strict";c.r(e);var n=c(1),o=c.n(n),i=c(3),r=c.n(i),s=(c(8),c(9),c(0));var a=function(){return Object(s.jsx)("div",{children:"hello shlomi"})};r.a.render(Object(s.jsx)(o.a.StrictMode,{children:Object(s.jsx)(a,{})}),document.getElementById("root"))},8:function(t,e,c){},9:function(t,e,c){}},[[11,1,2]]]);
+//# sourceMappingURL=main.c7befec7.chunk.js.map
