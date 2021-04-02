@@ -7,9 +7,11 @@ const NotFound = () => {
 
 
   return (
-    <div>
-      <h3>not found</h3>
-      <small>sorry     </small>
+    <div class="ui container">
+    <p>
+      <h1 class="ui header">404</h1>
+      <h2 class="ui header">NotFound</h2>
+    </p>
     </div>
   );
 };

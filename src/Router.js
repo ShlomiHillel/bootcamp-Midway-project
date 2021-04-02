@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import MainPage from './Pages/MainPage';
 import NotFound from './Pages/NotFound';
 import NavBar from './Components/Navbar';
-
+import LocWeather from './Components/LocWeather'
 
 
 const Router = () => {
@@ -11,8 +11,10 @@ const Router = () => {
         <div>
             <BrowserRouter>
                 <NavBar />
+                <LocWeather />
                 <Switch>
-                <Route exact path="/"  component={MainPage}/>
+                <Route exact path='/Main'  component={MainPage}/>
+                
                 <Route component={NotFound}/>
                 </Switch>
             
@@ -23,3 +25,8 @@ const Router = () => {
 }
 
 export default Router;
+
+
+
+// for props f
+// <Route path='/MainPage' render={(props) => (<MainPage {...props} isAuthed={true} />)}/>

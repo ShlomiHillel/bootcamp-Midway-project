@@ -1,0 +1,54 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+
+  header {
+    background: url('../Assets/displyedsand.jpg')   no-repeat center center/cover;
+    color: #fff;
+    height: 81vh;
+    text-align: center;
+    padding: 2rem;
+    padding-top: 15rem;
+    
+  }
+
+  header h1 {
+    font-size: 4rem;
+  }
+
+  header p {
+    margin: 1rem 0 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #eeeded;
+    color: #333;
+    padding: 0.75rem 2rem;
+  }
+
+  .btn:hover {
+    background: #cfcecea9;
+
+  } 
+
+
+  section {
+    padding: 2rem;
+  }
+
+  @media(max-height: 450px) {
+    header {
+      padding-top: 5rem;
+    }
+  }
