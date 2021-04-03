@@ -1,44 +1,51 @@
 import React,{useEffect, useState} from 'react';
-import  "./Navbar.css";
+import { Link } from 'react-router-dom';
+import logo from "../Assets/good-morning logo.jpg";
+
 
 const Navbar=() => {
-    const [scrolled,setScrolled]= useState(false);
+    //  const [scrolled,setScrolled]= useState(false);
   
-    const handleScroll=() => {
+    // const handleScroll=() => {
+    // window.scrollY>100 ? setScrolled(true): setScrolled(false) ;
+    //     } 
+   
+    // useEffect(() => {
+    //   window.addEventListener('scroll',handleScroll)
+    // })
 
-    let v =  window.scrollY
-      v > 200 ?  setScrolled(true): setScrolled(false) ;
-        } 
    
 
-    useEffect(() => {
-      window.addEventListener('scroll',handleScroll)
-    })
-  
-    
-    
+    const [open,setOpen]= useState( false);
+
+    const handleToggle = () => {
+      setOpen(!open );
+    };
+  let show = open ?'nav-links show-nav':'nav-links';
     return (
 
-        <div>
-            <input type="button" class="asa" value="home" />
+        <nav className= 'navbar'>
 
-
-        
-            <div className={ scrolled ? 'navbar scrolled' : 'navbar'}>
-          {/* <div className="logo">
-            <img src={Logo} alt="Logo" title="Logo" />
-          </div> */}
-  
-              <ul className="navi">
-                <li><a href="#post1">Home</a></li>
-                <li><a href="#post2">Home</a></li>
-                <li><a href="#post3">Home</a></li>
-                <li><a href="#post4">Home</a></li>
+          <div className='nav-center'>
+          
+            <div className='nav-header'>
+              <Link to='/'>< img src={ logo }  alt='goodmorning' /></Link> 
+              <button  type="button" className="nav-btn" onClick={handleToggle} > butten</button>
+            </div>
+              <ul className={show} >
+                <li><Link to='/'>home</Link></li>
+                <li><Link to='/Products'>Products</Link></li>
               </ul>
+
+
+            
+          </div>
+              
           
   
-      </div></div>
+      </nav>
     )
   };
   
   export default Navbar;
+  
