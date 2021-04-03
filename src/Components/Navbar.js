@@ -4,16 +4,15 @@ import logo from "../Assets/good-morning logo.jpg";
 
 
 const Navbar=() => {
-    //  const [scrolled,setScrolled]= useState(false);
-  
-    // const handleScroll=() => {
-    // window.scrollY>100 ? setScrolled(true): setScrolled(false) ;
-    //     } 
+     const [scrolled,setScrolled]= useState(false);
+      const handleScroll=() => {
+    window.scrollY>300 ? setScrolled(true): setScrolled(false) ;
+        } 
    
-    // useEffect(() => {
-    //   window.addEventListener('scroll',handleScroll)
-    // })
-
+    useEffect(() => {
+      window.addEventListener('scroll',handleScroll)
+    })
+    let shrink = scrolled ?'nav-header nav-shrink':'nav-header';
    
 
     const [open,setOpen]= useState( false);
@@ -28,7 +27,7 @@ const Navbar=() => {
 
           <div className='nav-center'>
           
-            <div className='nav-header'>
+            <div className={shrink}>
               <Link to='/'>< img src={ logo }  alt='goodmorning' /></Link> 
               <button  type="button" className="nav-btn" onClick={handleToggle} > butten</button>
             </div>

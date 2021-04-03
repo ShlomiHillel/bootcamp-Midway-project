@@ -22,8 +22,14 @@
     z-index: 1;
   }
   .nav-header {
+    
     display: flex;
     justify-content: space-between;
+  }
+
+  .nav-shrink {
+    height: 5vh;
+    transition:ease-in 1s;
   }
   .nav-btn {
     background: transparent;
