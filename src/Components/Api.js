@@ -6,11 +6,16 @@ import axios from 'axios';
 
 
 const Api = () =>{
+
+    const lng = 'lg';
+    const lat = 'lt';
+    
     const [arrivingData, setArrivingData] = useState([]);
 
 
+
     const getApiData= async()=>{
-        const data = await axios.get('https://freegeoip.app/json/');
+        const data = await axios.get(choich);
         setArrivingData(data.data);
         console.log(data.data);
     }
