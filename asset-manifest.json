@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/bootcamp-Midway-project/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/bootcamp-Midway-project/static/js/main.c7befec7.chunk.js",
-    "main.js.map": "/bootcamp-Midway-project/static/js/main.c7befec7.chunk.js.map",
-    "runtime-main.js": "/bootcamp-Midway-project/static/js/runtime-main.87b65215.js",
-    "runtime-main.js.map": "/bootcamp-Midway-project/static/js/runtime-main.87b65215.js.map",
-    "static/js/2.4bfb0a88.chunk.js": "/bootcamp-Midway-project/static/js/2.4bfb0a88.chunk.js",
-    "static/js/2.4bfb0a88.chunk.js.map": "/bootcamp-Midway-project/static/js/2.4bfb0a88.chunk.js.map",
-    "index.html": "/bootcamp-Midway-project/index.html",
-    "static/css/main.9d5b29c0.chunk.css.map": "/bootcamp-Midway-project/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.4bfb0a88.chunk.js.LICENSE.txt": "/bootcamp-Midway-project/static/js/2.4bfb0a88.chunk.js.LICENSE.txt"
+    "main.css": "/bootcamp%20Midway%20project/static/css/main.cc216d34.chunk.css",
+    "main.js": "/bootcamp%20Midway%20project/static/js/main.a340a8ed.chunk.js",
+    "main.js.map": "/bootcamp%20Midway%20project/static/js/main.a340a8ed.chunk.js.map",
+    "runtime-main.js": "/bootcamp%20Midway%20project/static/js/runtime-main.27f460b5.js",
+    "runtime-main.js.map": "/bootcamp%20Midway%20project/static/js/runtime-main.27f460b5.js.map",
+    "static/js/2.04cc48f3.chunk.js": "/bootcamp%20Midway%20project/static/js/2.04cc48f3.chunk.js",
+    "static/js/2.04cc48f3.chunk.js.map": "/bootcamp%20Midway%20project/static/js/2.04cc48f3.chunk.js.map",
+    "index.html": "/bootcamp%20Midway%20project/index.html",
+    "static/css/main.cc216d34.chunk.css.map": "/bootcamp%20Midway%20project/static/css/main.cc216d34.chunk.css.map",
+    "static/js/2.04cc48f3.chunk.js.LICENSE.txt": "/bootcamp%20Midway%20project/static/js/2.04cc48f3.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/bootcamp%20Midway%20project/static/media/displyedsand.ddac5c4e.jpg",
+    "static/media/good-morning logo.c5e91c42.jpg": "/bootcamp%20Midway%20project/static/media/good-morning logo.c5e91c42.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.87b65215.js",
-    "static/js/2.4bfb0a88.chunk.js",
-    "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.c7befec7.chunk.js"
+    "static/js/runtime-main.27f460b5.js",
+    "static/js/2.04cc48f3.chunk.js",
+    "static/css/main.cc216d34.chunk.css",
+    "static/js/main.a340a8ed.chunk.js"
   ]
 }
