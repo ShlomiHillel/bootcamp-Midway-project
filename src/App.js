@@ -6,7 +6,8 @@ import PageNotFound from './Pages/PageNotFound'
 import ProductsList from './Pages/ProductsList'
 import SingleProdut from './Pages/SingleProdut'
 import Navbar from './Components/Navbar';
-
+import Links from './Components/Links';
+import Api from './Components/Api';
 import './App.css';
 
 
@@ -18,6 +19,8 @@ function App() {
     <div >
       <BrowserRouter>
          <Navbar/>
+         <Links/>
+         <Api/>
          
          <Switch>
           <Route exact path='/'  component={ HomePage }/>
