@@ -5,25 +5,25 @@ import axios from 'axios';
 
 
 
-const Api = () =>{
 
-    const lng = 'lg';
-    const lat = 'lt';
+const Api = ({add}) =>{
+
+    let url = add;
+    // const lng = 'lg';
+    // const lat = 'lt';
+    console.log(add);
+    console.log('abra');
     
     const [arrivingData, setArrivingData] = useState([]);
 
 
 
     const getApiData= async()=>{
-        const data = await axios.get(choich);
+        const data = await axios.get('https://freegeoip.app/json/');
         setArrivingData(data.data);
         console.log(data.data);
     }
-    
-            
-            
-      
-
+ 
     useEffect(()=>{ getApiData()},[]);
     
 
