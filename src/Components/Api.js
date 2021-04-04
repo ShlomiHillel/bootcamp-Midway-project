@@ -1,43 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Initialize from './Initialize'
 
 
 
 
 
 
-const Api = ({add}) =>{
+const Api = ({choich ,CallBack}) =>{
 
-    let url = add;
-    // const lng = 'lg';
-    // const lat = 'lt';
-    console.log(add);
-    console.log('abra');
+    
+     let lng = '';
+     let lat = '';
+     let loc= null           
+    
     
     const [arrivingData, setArrivingData] = useState([]);
-
-
-
-    const getApiData= async()=>{
-        const data = await axios.get('https://freegeoip.app/json/');
-        setArrivingData(data.data);
-        console.log(data.data);
-    }
- 
-    useEffect(()=>{ getApiData()},[]);
     
 
-
-
-
+    const getApiData= async()=>{
+        const data = await axios.get(choich);
+        setArrivingData(data.data);
+        console.log(data.data.city);
+        
+    }
+    useEffect(()=>{ getApiData()},[]);
+    
+     if (arrivingData.data.city){
+         lat= arrivingData.data.latitude;
+          lng=arrivingData.data.longitude;
+           loc= true;
+     }      
      
-
-
-
-
+    
     return (
         <div>
-       
+               
         </div>
     )
 }
