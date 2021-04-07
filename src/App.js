@@ -7,6 +7,7 @@ import ProductsList from './Pages/ProductsList'
 import SingleProdut from './Pages/SingleProdut'
 import Navbar from './Components/Navbar';
 import Initialize from './Components/Initialize';
+import App2  from './Components/App2'
 // import Api from './Components/Api';
 import './App.css';
 
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/'  component={ HomePage }/>
           <Route exact path='/Products/' component={ ProductsList}/>
           <Route exact path='/Products/:type' component={ SingleProdut }/> 
+          <Route exact path='/App2' component={ App2 }/>
           <Route component={ PageNotFound }/>
          </Switch>
       </BrowserRouter>      

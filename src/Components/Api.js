@@ -4,37 +4,39 @@ import Initialize from './Initialize'
 
 
 
-
-
-
 const Api = ({choich ,CallBack}) =>{
 
     
-     let lng = '';
-     let lat = '';
-     let loc= null           
-    
-    
-    const [arrivingData, setArrivingData] = useState([]);
-    
+    let lng = '31.2340';
+    let lat = '34.7840';
+     let loc= null;   
+       
+    const [arrivingData, setArrivingData] = useState();
+    const [confo, setConfo] = useState(false);
 
     const getApiData= async()=>{
-        const data = await axios.get(choich);
-        setArrivingData(data.data);
-        console.log(data.data.city);
-        
+       try{
+         const data = await axios.get(choich);
+         setArrivingData(data.data)
+         setConfo('Y')
+        }catch(error){console.error();} 
+           
     }
-    useEffect(()=>{ getApiData()},[]);
+    useEffect(()=>{getApiData()},[]);
     
-     if (arrivingData.data.city){
-         lat= arrivingData.data.latitude;
-          lng=arrivingData.data.longitude;
-           loc= true;
-     }      
      
+        if (confo) {
+          lat= arrivingData.latitude;
+          console.log(lat);
+          lng=arrivingData.longitude;
+          console.log(lng);
+        loc= true;
+        console.log(loc);
+      }   
     
     return (
         <div>
+            
                
         </div>
     )

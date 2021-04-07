@@ -5,26 +5,65 @@
     padding: 0;
   }
 
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+  :root{
+    /* CSS HEX 
+--charcoal: #3D494Eff;
+--black-bean: #4C1A11ff;
+--maximum-green: #62843Dff;
+--pearly-purple: #A9688Bff;
+--golden-brown: #A1661Cff;
+--pale-silver: #C6C2BDff;
+
+/* CSS HSL  */
+/* charcoal */
+--ch: hsla(198, 12%, 27%, 1); 
+/* black-bean */
+--black: hsla(9, 63%, 18%, 1);
+/* maximum-green */
+--green: hsla(89, 37%, 38%, 1);
+/* pearly-purple */
+--purple: hsla(328, 27%, 54%, 1);
+/* golden-brown */
+--brown: hsla(33, 70%, 37%, 1);
+/* pale-silver */
+--silver: hsla(33, 7%, 76%, 1);  
+
   
 
-/* Navbar */
+
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+
+
+
+
+/* navbar------------------------------------------------------------- */ 
+
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
+    
     width: 100%;
-    padding: 0.75rem 2rem;
-    background: rgb(161, 131, 131);
+    padding: 0.75rem 0.75rem;
+    background:var(--brown);
     border-radius: 0px;
     z-index: 1;
   }
+ 
+
   .nav-header {
     
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    transition:ease-in 0.2s;
   }
 
   .nav-shrink {
@@ -32,6 +71,7 @@
     transition:ease-in 1s;
   }
   .nav-btn {
+    font-size: 36px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -66,7 +106,65 @@
     height: 100px;
   }
 
+  /* end -navbar------------------------------------------------------------- */
+  
+  
+   
+   
 
+/* cart ---------------------------------------------------------------------- */
+.xcircle-btn{
+  font-size: 55px; 
+  background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+  .cart-btn  {
+    float:inline-end;
+    font-size: 40px; 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+.cover{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: grid;
+  place-items: center;
+  /* transition:ease-in 1s   ; */
+  visibility: hidden;
+  z-index: -1;
+}
+
+.sshowCart {
+  visibility: visible;
+  z-index: 10;
+}
+.cart-container {
+
+
+  background: var(--black);
+  border-radius: 15px;
+  width: 50vw;
+  height: 50vh;
+  max-width: 50vw;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+ 
+  
+
+  /* resposivenes -----*/
   @media screen and (min-width: 768px) {
     .nav-btn {
       display: none;
@@ -79,23 +177,24 @@
     .nav-links {
       height: auto;
       display: flex;
-      margin-left: 4rem;
+      margin-left: 7rem;
+      justify-content: space-between;
     }
     .nav-links a {
       margin: 0 1rem;
       padding: 0.5rem 0;
     }
   }
-  /* end -navbar---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  
 
-  /* HomePage */
+  /* HomePage -------------------------------------------------------------*/
   header {
-    background: url('./Assets/displyedsand.jpg')   no-repeat center center/cover;
+    background: url('./Assets/1.png')   no-repeat center center/cover;
     color: #fff;
     height: 81vh;
     text-align: center;
     padding: 2rem;
-    padding-top: 15rem;
+    padding-top: 12rem;
     
   }
 

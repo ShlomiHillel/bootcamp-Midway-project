@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Api from './Api'
 
 
@@ -16,24 +16,23 @@ const Initialize = (askFor) => {
     const callBackLoc= ()=> {}
 
         switch (askFor) {
-            case sunrise : 
-            choich = sunrise;
+            case sunrise :  choich = sunrise;
             break;
-            case wether : 
-            choich = wether;
+            case wether : choich = wether;
             break;
                     
-            default:
-            choich = location;    
+            default: choich = location;    
             break;
         }
     
 
     return (
         <div>
-            <Api choich={choich} callBackLoc={LocPoint => setLoc(LocPoint)} />
+             <Api choich={choich} /> 
         </div>
     );
 }
 
 export default Initialize;
+
+ /*{callBackLoc={LocPoint => setLoc(LocPoint)}}*/
