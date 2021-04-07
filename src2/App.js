@@ -4,11 +4,10 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import HomePage from './Pages/HomePage'
 import PageNotFound from './Pages/PageNotFound'
 import ProductsList from './Pages/ProductsList'
-import SingleProdut from './Pages/SingleProdut'
 import Navbar from './Components/Navbar';
-import Initialize from './Components/Initialize';
-import App2  from './Components/App2'
-import Api from './Components/Api';
+// import Initialize from './Components/Initialize';
+import Cart from './Components/Cart'
+// import Api from './Components/Api';
 import './App.css';
 
 
@@ -21,14 +20,12 @@ function App() {
       <BrowserRouter>
 
          <Navbar/>
-         <Initialize/>
-         <Api/>
+         {/* <Initialize/> */}
         
          <Switch>
-          <Route exact path='/'  component={ HomePage }/>
-          <Route exact path='/Products/' component={ ProductsList}/>
-          <Route exact path='/Products/:type' component={ SingleProdut }/> 
-          <Route exact path='/App2' component={ App2 }/>
+          <Route exact path='/'  component={ Cart }/>
+          {/* <Route exact path='/Products/' component={ ProductsList}/> */}
+          {/* <Route exact path='/Cart' component={ Cart }/> */}
           <Route component={ PageNotFound }/>
          </Switch>
       </BrowserRouter>      

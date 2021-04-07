@@ -35,6 +35,7 @@ const myContext = React.createContext();
 // }
 
 
+
 let initialState = {
   loading: false,
   cart: cartItems,
@@ -44,9 +45,11 @@ let initialState = {
 const MainProvider = ({ children }) => {
   const [cartIsOpen, setCartIsOpen] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState);
-// useState - cart-------------------------------
+
+// useState - cart---------------------------------
   const cOpen = () => {setCartIsOpen(true);};
     const cClose = () => { setCartIsOpen(false);};
+    
 // useReducer - cart-------------------------------
 const clearCart = () => {
   dispatch({ type: 'CLEAR_CART' })
@@ -62,8 +65,9 @@ const decrease = (id) => {
 }
 const fetchData = async () => {
   dispatch({ type: 'LOADING' })
-  const response = await fetch(url)
-  const cart = await response.json()
+  const dataRecive = await axios.get(url)
+  const cart = dataRecive.data
+  console.log(cart)
 
   dispatch({ type: 'DISPLAY_ITEMS', payload: cart })
 }

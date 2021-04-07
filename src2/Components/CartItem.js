@@ -1,14 +1,14 @@
 import React,{useContext} from 'react';
 import { myContext } from  '../Context'
 
-const CartItem = ({ id, img, title, price, amount }) => {
-  const { remove,  toggleAmount } = useContext(myContext)
+const CartItem = ({ id, image, pName, price, amount }) => {
+  const { remove, toggleAmount } = useContext(myContext)
   return (
     <article className='cart-item'>
-      <img src={img} alt={title} />
+      <img src={image} alt={pName} />
       <div>
-        <h4>{title}</h4>
-        <h4 className='item-price'>${price}</h4>
+        <h4>{pName}</h4>
+        <h4 className='item-price'>₪{price}</h4>
         {/* remove button */}
         <button className='remove-btn' onClick={() => remove(id)}>
           remove
@@ -16,11 +16,11 @@ const CartItem = ({ id, img, title, price, amount }) => {
       </div>
       <div>
         {/* increase amount */}
-        <button className='amount-btn' onClick={() => toggleAmount(id, 'inc')}> minus</button>
+        <button className='amount-btn' onClick={() => toggleAmount(id, 'inc')}>הפחת</button>
         {/* amount */}
         <p className='amount'>{amount}</p>
         {/* decrease amount */}
-        <button className='amount-btn' onClick={() => toggleAmount(id, 'dec')}>plus</button>
+        <button className='amount-btn' onClick={() => toggleAmount(id, 'dec')}>הוסף</button>
       </div>
     </article>
   )
