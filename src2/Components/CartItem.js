@@ -1,14 +1,14 @@
 import React,{useContext} from 'react';
 import { myContext } from  '../Context'
 
-const CartItem = ({ id, image, pName, price, amount }) => {
+const CartItem = ({ id, image, pName, pPrice, amount }) => {
   const { remove, toggleAmount } = useContext(myContext)
   return (
     <article className='cart-item'>
       <img src={image} alt={pName} />
       <div>
         <h4>{pName}</h4>
-        <h4 className='item-price'>₪{price}</h4>
+        <h4 className='item-pPrice'>₪{pPrice}</h4>
         {/* remove button */}
         <button className='remove-btn' onClick={() => remove(id)}>
           remove

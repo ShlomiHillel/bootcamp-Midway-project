@@ -1,30 +1,26 @@
 
-import React,{ useContext} from 'react';
-import { myContext } from '../Context'
+// import React,{ useContext} from 'react';
+// import { myContext } from '../Context'
+// import CartCon from './CartCon'
+// // items
 
-// components
-import Navbar2 from './Navbar2'
-import CartCon from '../Components/CartCon'
-// items
+// function CartShow() {
+//   const { loading } = useContext(myContext)
+//   if (loading) {
+//     return (
+//       <div className='loading'>
+//         <h1>Loading...</h1>
+//       </div>
+//     )
+//   }
+//   return (
+//     <main>
+//       <CartCon />
+//     </main>
+//   )
+// }
 
-function App2() {
-  const { loading } = useContext(myContext)
-  if (loading) {
-    return (
-      <div className='loading'>
-        <h1>Loading...</h1>
-      </div>
-    )
-  }
-  return (
-    <main>
-      <Navbar2 />
-      <CartCon />
-    </main>
-  )
-}
-
-export default App2;
+// export default CartShow;
 
 
 
@@ -38,20 +34,20 @@ export default App2;
 //   {
 //     id: 1,
 //     name: "milk",
-//     price: 3.5,
-//     Amount:0, 
+//     pPrice: 3.5,
+//     amount:0, 
 //   },
 //   {
 //     id: 2,
 //     name: "yogurt",
-//     price: 6.2,
-//     Amount:0,
+//     pPrice: 6.2,
+//     amount:0,
 //   },
 //   {
 //     id: 3,
 //     name: "bread",
-//     price: 4.5,
-//     Amount:0,
+//     pPrice: 4.5,
+//     amount:0,
 //   },
 // ];
 
@@ -59,7 +55,7 @@ export default App2;
   
 //   const [cart, setCart] = useState([]);
 //   console.log(cart);
-//   const TotalAmount = cart.reduce((total, { price = 0 }) => total + price, 0);
+//   const TotalAmount = cart.reduce((total, { pPrice = 0 }) => total + pPrice, 0);
 
 //   const increInCart = (item) => setCart((cartNow) => [...cartNow, item]);
 
@@ -84,7 +80,7 @@ export default App2;
 
 //   const listItemsInCart = () => items.map((item) => (
 //     <div key={item.id}>
-//       ({amountOfItems(item.id)} x ${item.price}) {`${item.name}`}
+//       ({amountOfItems(item.id)} x ${item.pPrice}) {`${item.name}`}
 //       <button type="submit" onClick={() => decInCart(item)}>הפחת</button>
 //       <button type="submit" onClick={() => increInCart(item)}>הוסף</button>
 //     </div>

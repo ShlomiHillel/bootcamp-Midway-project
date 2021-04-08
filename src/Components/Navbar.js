@@ -1,6 +1,7 @@
 import React,{useEffect, useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { myContext } from '../Context';
+import CartCon  from './CartCon'
 
 import logo from "../Assets/logo-regSize.png";
 
@@ -9,7 +10,7 @@ const Navbar=() => {
      const [scrolled,setScrolled]= useState(false);
      const [open,setOpen]= useState( false);
     
-     const { cartIsOpen, cClose, cOpen, amount} = useContext(myContext);
+     const { cartIsOpen, cOpen, amount} = useContext(myContext);
   
      
 
@@ -43,30 +44,27 @@ const Navbar=() => {
             <div className={shrink}>
             <h3></h3>
         <div className='nav-container'>
-          <i class="fas fa-times-circle"></i>
+          
           <div className='amount-container'>
             <p className='total-amount'>{amount}</p>
           </div>
         </div> 
-            <button onClick={cOpen} className="cart-btn"  > <i class="fas fa-shopping-cart"></i> </button>
+            <button onClick={cOpen} className="cart-btn"  ><i className="corner circle icon"></i> <i className="fas fa-shopping-cart"></i> </button>
               <Link to='/'>< img src={ logo }  alt='goodmorning' /></Link> 
-              <button  type="button" className="nav-btn" onClick={handleHamToggle} ><i class="fas fa-angle-double-down"></i></button>      
+              <button  type="button" className="nav-btn" onClick={handleHamToggle} ><i className="fas fa-angle-double-down"></i></button>      
               
              </div>
               
               <ul className={showHamInside} >
                 <li><Link to='/'>home</Link></li>
                 <li><Link to='/Products'>Products</Link></li>
-                <li><Link to='/'>home</Link></li>
+                <li><Link to='/'>about us</Link></li>
                 
               </ul>
-              <div className={showCart}>
-      <div className='cart-container'>
-        <h1>cart content</h1>
-      
-        <button className='xcircle-btn' onClick={cClose}>
-        <i class="far fa-times-circle"></i>        
-        </button>
+              <div className={showCart}>  
+      <div className='cart-container'>< CartCon />
+        
+             
       </div>
         </div>
     </div>

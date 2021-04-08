@@ -40,9 +40,9 @@ const Navbar=() => {
         <nav className= 'navbar'>
           <div className='nav-center'>
             <div className={shrink}>
-            <button onClick={cOpen} className="cart-btn"  > <i class="fas fa-shopping-cart"></i> </button>
-              <Link to='/'>< img src={ logo }  alt='goodmorning' /></Link> 
-              <button  type="button" className="nav-btn" onClick={handleHamToggle} ><i class="fas fa-angle-double-down"></i></button>      
+            <button onClick={cOpen} className="cart-btn"  > <i className="fas fa-shopping-cart"></i> </button>
+              <Link to='/'>< Pimage src={ logo }  alt='goodmorning' /></Link> 
+              <button  type="button" className="nav-btn" onClick={handleHamToggle} ><i classname="fas fa-angle-double-down"></i></button>      
               
              </div>
               
@@ -57,12 +57,12 @@ const Navbar=() => {
                 <h1>cart content</h1>
                 <Cart/>
                 <button className='xcircle-btn' onClick={cClose}>
-                <i class="far fa-times-circle"></i>        
+                <i className="far fa-times-circle"></i>        
                 </button>
               </div>
               </div>
               <div className='nav-container'>
-       <i class="far fa-circle"></i>
+       <i className="far fa-circle"></i>
        <div className='amount-container'>
          <p className='total-amount'>{amount}</p>
        </div>

@@ -3,36 +3,16 @@ import reducer from './Components/Reducer'
 import axios from 'axios'
 
 
-// let cartItems =[
-//   { id: 1,
-//     pName: 'Samsung Galaxy S7',
-//     pPrice: 599.99,
-//     Pimage:
-//       ,
-//     amount: 1,
-//   },  {id: 2,
-//     pName: 'google pixel ',
-//     pPrice: 499.99,
-//     Pimage:
-//       ,
-//     amount: 1,
-//   },  {id: 3,
-//     pName: 'Xiaomi Redmi Note 2',
-//     pPrice: 699.99,
-//     Pimage:
-//       ,
-//     amount: 1,
-//   },
-// ];
-const url = 'https://course-api.com/react-useReducer-cart-project'
+let cartItems =[
+  { id: 1,
+    pName: 'milk',
+    pPrice: 6,
+    Pimage:   'pic',
+    amount: 1,
+  },
+];
+const url = 'https://606d503a603ded00175035e8.mockapi.io/cart'
 const myContext = React.createContext();
-
-// const initialState = {
-//   cart: getLocalStorage(),
-//   total_items: 0,
-//   total_amount: 0,
-//   shipping_fee: 534,
-// }
 
 
 
@@ -46,9 +26,11 @@ const MainProvider = ({ children }) => {
   const [cartIsOpen, setCartIsOpen] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState);
 
-// useState - cart---------------------------------
+
+// useState - cart-------------------------------
   const cOpen = () => {setCartIsOpen(true);};
     const cClose = () => { setCartIsOpen(false);};
+
     
 // useReducer - cart-------------------------------
 const clearCart = () => {
@@ -57,36 +39,28 @@ const clearCart = () => {
 const remove = (id) => {
   dispatch({ type: 'REMOVE', payload: id })
 }
-const increase = (id) => {
-  dispatch({ type: 'INCREASE', payload: id })
-}
-const decrease = (id) => {
-  dispatch({ type: 'DECREASE', payload: id })
-}
+
 const fetchData = async () => {
   dispatch({ type: 'LOADING' })
-  const dataRecive = await axios.get(url)
-  const cart = dataRecive.data
-  console.log(cart)
+  const data = await axios(url)
+  const cart = data.data
+  console.log(data);
+
 
   dispatch({ type: 'DISPLAY_ITEMS', payload: cart })
 }
 const toggleAmount = (id, type) => {
   dispatch({ type: 'TOGGLE_AMOUNT', payload: { id, type } })
 }
-useEffect(() => {
-  fetchData()
-}, [])
+useEffect(() => {fetchData()}, [])
 
-useEffect(() => {
-  dispatch({ type: 'GET_TOTALS' })
-}, [state.cart])
+useEffect(() => {dispatch({ type: 'GET_TOTALS' })}, [state.cart])
 
 
 
   return (
     <myContext.Provider value={{ cartIsOpen, cOpen,cClose,
-       ...state, clearCart, remove,increase, decrease, toggleAmount,}} >
+       ...state, clearCart, remove, toggleAmount,}} >
       {children}
     </myContext.Provider>
   );

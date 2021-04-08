@@ -1,4 +1,4 @@
-
+ 
 
 
 const reducer = (state, action) => {
@@ -21,8 +21,8 @@ const reducer = (state, action) => {
         
         case 'GET_TOTALS': let { total, amount } = state.cart.reduce(
             (cartTotal, cartItem) => {
-              const { price, amount } = cartItem;
-              const itemTotal = price * amount;
+              const { pPrice, amount } = cartItem;
+              const itemTotal = pPrice * amount;
               cartTotal.total = cartTotal.total + itemTotal;
               cartTotal.amount = cartTotal.amount+ amount;
               return cartTotal},{  total: 0,   amount: 0, } )
@@ -42,8 +42,34 @@ const reducer = (state, action) => {
             } return cartItem }).filter((cartItem) => cartItem.amount !== 0)
         return { ...state, cart: tempCart3 };
 
-        default:
-            throw new Error('no matching action found');
+            
+        case 'ADD_TO_CART': const { id, ProductName, pprice } = action.payload;
+        const tempItem = state.cart.find((i) => i.id === id )
+          if (tempItem) {
+            const tempCart = state.cart.map((cartItem) => {
+              if (cartItem.id === id ) {
+                let newAmount = (cartItem.amount)+1;
+                 return { ...cartItem, amount: newAmount }
+              } else {
+                return cartItem
+              }
+            })
+            return { ...state, cart: tempCart }
+          } else {
+            const newItem = {
+              id: id ,
+              pName: ProductName,
+              amount: 1,
+              pimage: false,
+              pprice:pprice,
+            }
+            return { ...state, cart: [...state.cart, newItem] }
+          }
+       ;
+
+        
+        default:throw new Error('no matching action found');
+      }        
     }
-}
+
   export default reducer
